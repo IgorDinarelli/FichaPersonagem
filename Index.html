@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="ficha">
+
+    <div class="nomePontos">
+  
+      Nome:<input class="txtNome" type="text">
+      Idade:<input class="txtIdade" type="text">
+      Nivel:<input class="txtNivel" id="nivel" onchange="nivelChange(), pontosChange()" type="text">
+      Pontos:<input class="txtPontos" id="pontos" onchange="pontosChange()" type="text" disabled>
+      Pontos Restantes:<input class="txtPontosRestantes" id="pontosRestantes" type="text" disabled>
+  
+    </div>
+    
+    <div class="caracteristicas">
+
+      <div class="player">
+        <select class="vanDesvan" id="sex" onchange="sexChange()">
+          <option>Masculino</option>
+          <option>Feminino</option>
+        </select>
+        <img class="playerIMG" id="sexImg" src="https://i.imgur.com/GRblnFD.png" title="CorpoMedio"/>
+      </div>
+
+      <div class="atributos">
+        <h3>Atributos</h3>
+        <div class="atributo">
+          <label >Força:</label> 
+          <button onclick="remAtbPoint('a1')">-</button>
+
+          <input class="txtAtributos" type="text" id="a1" value="0" disabled>
+          <button onclick="addAtbPoint('a1')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label >Habilidade:</label> 
+          <button onclick="remAtbPoint('a2'),attbRestPoint('a2')">-</button>
+
+          <input class="txtAtributos" type="text" id="a2" value="0" disabled>
+          <button onclick="addAtbPoint('a2'),attbRestPoint('a2')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label>Agilidade:</label> 
+          <button onclick="remAtbPoint('a3')">-</button>
+
+          <input class="txtAtributos" type="text" id="a3" value="0" disabled>
+          <button onclick="addAtbPoint('a3')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label>Social:</label> 
+          <button onclick="remAtbPoint('a4')">-</button>
+
+          <input class="txtAtributos" type="text" id="a4" value="0" disabled>
+          <button onclick="addAtbPoint('a4')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label>Psicologico:</label> 
+          <button onclick="remAtbPoint('a5')">-</button>
+
+          <input class="txtAtributos" type="text" id="a5" value="0" disabled>
+          <button onclick="addAtbPoint('a5')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label>Vida:</label> 
+          <button onclick="remAtbPoint('a6')">-</button>
+
+          <input class="txtAtributos" type="text" id="a6" value="0" disabled>
+          <button onclick="addAtbPoint('a6')">+</button>
+        </div>
+
+        <h3>Vantagens</h3>
+        <select class="vanDesvan" id="van1" onchange="vanChange('van1')">
+          <option value="nenhum">Nenhuma</option>
+          <option value="1">Eficaz em</option>
+          <option value="1">Bom de Mira</option>
+          <option value="1">Corajoso</option>
+          <option value="1">Boa Fama</option>
+          <option value="1">Bonito</option>
+          <option value="1">Observador</option>
+        </select>
+
+        <select class="vanDesvan" id="van2" onchange="vanChange('van2')">
+          <option value="nenhum">Nenhuma</option>
+          <option value="1">Eficaz em</option>
+          <option value="1">Bom de Mira</option>
+          <option value="1">Corajoso</option>
+          <option value="1">Boa Fama</option>
+          <option value="1">Bonito</option>
+          <option value="1">Observador</option>
+        </select>
+
+        <select class="vanDesvan" id="van3" onchange="vanChange('van3')">
+          <option value="nenhum">Nenhuma</option>
+          <option value="1">Eficaz em</option>
+          <option value="1">Bom de Mira</option>
+          <option value="1">Corajoso</option>
+          <option value="1">Boa Fama</option>
+          <option value="1">Bonito</option>
+          <option value="1">Observador</option>
+        </select>
+
+        <select class="vanDesvan" id="van4" onchange="vanChange('van4')">
+          <option value="nenhum">Nenhuma</option>
+          <option value="1">Eficaz em</option>
+          <option value="1">Bom de Mira</option>
+          <option value="1">Corajoso</option>
+          <option value="1">Boa Fama</option>
+          <option value="1">Bonito</option>
+          <option value="1">Observador</option>
+        </select>
+
+        <select class="vanDesvan" id="van5" onchange="vanChange('van5')">
+          <option value="nenhum">Nenhuma</option>
+          <option value="1">Eficaz em</option>
+          <option value="1">Bom de Mira</option>
+          <option value="1">Corajoso</option>
+          <option value="1">Boa Fama</option>
+          <option value="1">Bonito</option>
+          <option value="1">Observador</option>
+        </select>
+
+        <select class="vanDesvan" id="van6" onchange="vanChange('van6')">
+          <option value="nenhum">Nenhuma</option>
+          <option value="1">Eficaz em</option>
+          <option value="1">Bom de Mira</option>
+          <option value="1">Corajoso</option>
+          <option value="1">Boa Fama</option>
+          <option value="1">Bonito</option>
+          <option value="1">Observador</option>
+        </select>
+        <p>Obs*: Descreva na historia</p>
+
+      </div>
+
+      <div class="atributos">
+        <h3>Habilidades</h3>
+
+        <div class="atributo">
+          <label>Luta Corporal:</label>
+          <button onclick="remHblPoint('h1')">-</button>
+
+          <input class="txtAtributos" type="text" id="h1" value="0" disabled>
+          <button onclick="addHblPoint('h1')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label>Tonfa:</label>
+          <button onclick="remHblPoint('h2')">-</button>
+
+          <input class="txtAtributos" type="text" id="h2" value="0" disabled>
+          <button onclick="addHblPoint('h2')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label>Espada:</label>
+          <button onclick="remHblPoint('h3')">-</button>
+
+          <input class="txtAtributos" type="text" id="h3" value="0" disabled>
+          <button onclick="addHblPoint('h3')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label>Arco e Flexa:</label>
+          <button onclick="remHblPoint('h4')">-</button>
+
+          <input class="txtAtributos" type="text" id="h4" value="0" disabled>
+          <button onclick="addHblPoint('h4')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label>Caça:</label>
+          <button onclick="remHblPoint('h5')">-</button>
+
+          <input class="txtAtributos" type="text" id="h5" value="0" disabled>
+          <button onclick="addHblPoint('h5')">+</button>
+        </div>
+
+        <div class="atributo">
+          <label>Medicina:</label>
+          <button onclick="remHblPoint('h6')">-</button>
+
+          <input class="txtAtributos" type="text" id="h6" value="0" disabled>
+          <button onclick="addHblPoint('h6')">+</button>
+        </div>
+
+        <h3>Desvantagens</h3>
+
+        <select class="vanDesvan" id="desvan">
+          <option>Nenhuma</option>
+          <option>Deficiente</option>
+          <option>Colpulsão</option>
+          <option>Fobia</option>
+          <option>Má Fama</option>
+          <option>Feio</option>
+          <option>Desatento</option>
+        </select>
+
+        <select class="vanDesvan" id="desvan">
+          <option>Nenhuma</option>
+          <option>Deficiente</option>
+          <option>Colpulsão</option>
+          <option>Fobia</option>
+          <option>Má Fama</option>
+          <option>Feio</option>
+          <option>Desatento</option>
+        </select>
+
+        <select class="vanDesvan" id="desvan">
+          <option>Nenhuma</option>
+          <option>Deficiente</option>
+          <option>Colpulsão</option>
+          <option>Fobia</option>
+          <option>Má Fama</option>
+          <option>Feio</option>
+          <option>Desatento</option>
+        </select>
+
+        <select class="vanDesvan" id="desvan">
+          <option>Nenhuma</option>
+          <option>Deficiente</option>
+          <option>Colpulsão</option>
+          <option>Fobia</option>
+          <option>Má Fama</option>
+          <option>Feio</option>
+          <option>Desatento</option>
+        </select>
+
+        <select class="vanDesvan" id="desvan">
+          <option>Nenhuma</option>
+          <option>Deficiente</option>
+          <option>Colpulsão</option>
+          <option>Fobia</option>
+          <option>Má Fama</option>
+          <option>Feio</option>
+          <option>Desatento</option>
+        </select>
+
+        <select class="vanDesvan" id="desvan">
+          <option>Nenhuma</option>
+          <option>Deficiente</option>
+          <option>Colpulsão</option>
+          <option>Fobia</option>
+          <option>Má Fama</option>
+          <option>Feio</option>
+          <option>Desatento</option>
+        </select>
+  
+        <p>Obs*: Descreva na historia</p>
+      </div>
+      <div class="historia">
+        <h3>Historia do Personagem</h3>
+        <textarea name="" class="" cols="" rows=""></textarea>
+      </div>
+    </div>
+  
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+body{
+  background: darkgrey;
+}
+button{
+  float:right;
+}
+h3{
+  text-align: center;
+}
+label{
+  margin-right:auto;
+}
+p{
+  text-align: center;
+}
+select{
+  background: #888;
+}
+textarea{
+  width: 90%;
+  height: 84%;
+  display:block;
+  margin: auto;
+  background: #777;
+}
+.nomePontos{
+  margin-bottom:0.5%;
+}
+.txtNome{
+  width: 60%;
+  background: #888;
+}
+.txtIdade{
+  width: 1.2%;
+  background: #888;
+}
+.txtPontos{
+  width: 1.2%;
+  background: #888;
+}
+.txtPontosRestantes{
+  width: 1.2%;
+  background: #888;
+}
+.txtNivel{
+  width: 1.2%;
+  background: #888;
+}
+.caracteristicas{
+  display:flex;
+}
+.habilidades{
+  display:flex;
+}
+.player{
+  width: 25%;
+  background-color: #888;
+}
+.playerIMG{
+  width: 97.5%;
+  height: 97.5%;
+}
+.atributos{
+  width: 14%;
+  margin-left:1%;
+  background: #888;
+}
+.historia{
+  width: 44%;
+  margin-left:1%;
+  background: #888;
+}
+.atributo{
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  margin-left:5%;
+  margin-right:5%;
+  display:flex;
+}
+.txtAtributos{
+  width: 15px;
+}
+.vanDesvan{
+  display:block;
+  margin:auto;
+  width: 60%;
+}
+.ctdAtributo{
+  margin:right;
+  display:block;
+}
+
