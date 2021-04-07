@@ -89,15 +89,22 @@ function vanEnb(){//vantagem Enable habilita da opção de vantagem
   }
 }
 
-var val=0;//variavel de nome fal se ela for == true ou seja 
+var val =[];//variavel de nome val se ela for == true ou seja 
 
 function vanChange(x){
-
-  if(document.getElementById(x).value =="nenhum"){
-    document.getElementById('pontosRestantes').value = parseInt(document.getElementById('pontosRestantes').value) +1;
-    vanEnb();
-  }else{
-    document.getElementById('pontosRestantes').value -=1;
-    vanDis();
+  for (i = 1; i <= 6; i++) {
+    if(x==('van'+i)){
+      if(document.getElementById(x).value =="nenhum"){
+        document.getElementById('pontosRestantes').value = parseInt(document.getElementById('pontosRestantes').value) +1;
+        val[i]=1;
+        vanEnb();
+      }else{
+        if(val[i]==undefined || val[i]==1){
+          document.getElementById('pontosRestantes').value -=1;
+        }
+        vanDis();
+        val[i]=0;
+      }
+    }
   }
 }
